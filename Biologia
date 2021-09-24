@@ -1,0 +1,154 @@
+/*
+Exercício 3 - Criar classes com características e comportamentos
+-> Instruções
+   A partir de objetos comuns, crie 3 classes, abstraindo ao menos 5 características e 3 comportamentos para cada uma.
+   * Crie o código em Java para estas classes.
+
+Exercício 4 - Criação de instâncias
+-> Instruções
+Com base nas classes criadas no exercício anterior, instancie 2 objetos para cada classe, e escreva códigos para modificar
+ suas características e executar seus comportamentos.
+*/
+import javax.swing.JOptionPane;
+
+public class Biologia {
+   public static void main(String[] args) {
+
+   int dominio;
+   Bacteria chamar1 = new Bacteria();
+   Arquea chamar2 = new Arquea();
+   Eucaria chamar3 = new Eucaria();
+
+   dominio = Integer.parseInt(JOptionPane.showInputDialog("Qual reino você deseja conhecer? " + "\n1 - Bacteria" +
+           "\n2 - Arquea" + "\n3 - Eucaria"));
+
+      switch (dominio){
+      case 1:
+         chamar1.classificarReino();
+         chamar1.verificarNucleoCelular();
+         chamar1.reproduzir();
+         break; // evita que execute outros cases
+      case 2:
+         chamar2.classificarReino();
+         chamar2.verificarNucleoCelular();
+         chamar2.reproduzir();
+         break; // evita que execute outros cases
+      case 3:
+         chamar3.classificarReino();
+         chamar3.verificarNucleoCelular();
+         chamar3.reproduzir();
+         break; // evita que execute outros cases
+         //default:
+           // throw new IllegalStateException("Unexpected value: " + reino);
+      }
+   }
+}
+//_________________________________________________________________________________________________________
+class Bacteria{
+   String bacteria1;
+   String bacteria2;
+   String bacteria3;
+   String cianobactéria1;
+   String cianobactéria2;
+
+   public Bacteria(){
+      this.bacteria1 ="Bordetella pertussis " ;
+      this.bacteria2 = "Mycobacterium leprae ";
+      this.bacteria3 = "Treponema pallidum";
+      this.cianobactéria1 = "Chroococcales";
+      this.cianobactéria2 = "Spirulina" ;
+   }
+
+   public void classificarReino(){
+      System.out.println("->Agora vamos ver algumas caracteriscas de seres vivos do dominio Bacteria:");
+      System.out.println("Classificação de Reinos:");
+      System.out.println("    "+ this.bacteria1 + ": Reino Monera");
+      System.out.println("    "+ this.bacteria2 + ": Reino Monera");
+      System.out.println("    "+ this.bacteria3 + ": Reino Monera");
+      System.out.println("    "+ this.cianobactéria1 + ": Reino Monera");
+      System.out.println("    "+ this.cianobactéria2 + ": Reino Monera");
+   }
+
+   public void verificarNucleoCelular(){
+      System.out.println("Contem nucleo celular?");
+      System.out.println("    Não, encontramos organismos procariontes.");
+   }
+
+   public void reproduzir(){
+      System.out.println("Tipo de reprodução:");
+      System.out.println("    Reprodução Assexuada");
+   }
+}
+//_________________________________________________________________________________________________________
+class Arquea{
+   String arqueobacteria1;
+   String arqueobacteria2;
+   String arqueobacteria3;
+   String arqueobacteria4;
+   String arqueobacteria5;
+
+   public Arquea(){
+      this.arqueobacteria1 = "F";
+      this.arqueobacteria2 = "G";
+      this.arqueobacteria3 = "H";
+      this.arqueobacteria4 = "I";
+      this.arqueobacteria5 = "J";
+   }
+   //System.out.println("->Agora vamos ver algumas caracteriscas:");
+
+   public void classificarReino(){
+      System.out.println("->Agora vamos ver algumas caracteriscas de seres vivos do dominio Arquea:");
+      System.out.println("Classificação de Reinos:");
+      System.out.println("    "+ this.arqueobacteria1 + ": Reino Monera");
+      System.out.println("    "+ this.arqueobacteria2 + ": Reino Monera");
+      System.out.println("    "+ this.arqueobacteria3 + ": Reino Monera");
+      System.out.println("    "+ this.arqueobacteria4 + ": Reino Monera");
+      System.out.println("    "+ this.arqueobacteria5 + ": Reino Monera");
+   }
+
+   public void verificarNucleoCelular(){
+      System.out.println("Contem nucleo celular?");
+      System.out.println("    Não, encontramos organismos procariontes.");
+   }
+
+   public void reproduzir(){
+      System.out.println("Tipo de reprodução:");
+      System.out.println("    Reprodução Assexuada e Sexuada");
+   }
+}
+//_________________________________________________________________________________________________________
+class Eucaria{
+   String protista;
+   String planta;
+   String fungo;
+   String animal1;
+   String animal2;
+
+   public Eucaria(){
+      this.protista = "A";
+      this.planta = "B";
+      this.fungo = "C";
+      this.animal1= "D";
+      this.animal2 = "E";
+   }
+
+   public void classificarReino(){
+      System.out.println("->Agora vamos ver algumas caracteriscas de seres vivos do dominio Eucaria:");
+      System.out.println("Classificação de Reinos:");
+      System.out.println("    "+this.protista + ": Reino Protista");
+      System.out.println("    "+this.planta + ": Reino Platae");
+      System.out.println("    "+this.fungo + ": Reino Fungi");
+      System.out.println("    "+this.animal1 + ": Reino Animalia");
+      System.out.println("    "+this.animal2 + ": Reino Animalia");
+   }
+
+   public void verificarNucleoCelular(){
+      System.out.println("Contem nucleo celular?");
+      System.out.println("    Sim, encontramos organismos eucariontes.");
+   }
+
+   public void reproduzir(){
+      System.out.println("Tipo de reprodução:");
+      System.out.println("Reprodução assexuada e sexuada");
+   }
+}
